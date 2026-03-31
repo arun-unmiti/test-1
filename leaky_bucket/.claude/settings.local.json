@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/cheli/Downloads/**)",
+      "Bash(grep -n \"def read_list\" /c/Users/cheli/leaky_bucket_api/api_core/views/*.py)",
+      "Bash(grep -n \"INSERT INTO \\\\`tbl_form\\\\`\" \"c:/Users/cheli/Downloads/leaky_bucket_test_db.sql\")",
+      "Bash(grep -A5 \"INSERT INTO \\\\`tbl_form_type\\\\`\" \"c:/Users/cheli/Downloads/leaky_bucket_test_db.sql\")",
+      "Bash(grep -A20 \"INSERT INTO \\\\`tbl_form\\\\`\" \"c:/Users/cheli/Downloads/leaky_bucket_test_db.sql\")",
+      "Bash(grep -A2 \"INSERT INTO \\\\`tbl_form\\\\`\" \"c:/Users/cheli/Downloads/leaky_bucket_test_db.sql\")",
+      "Bash(git pull:*)",
+      "Bash(git fetch:*)"
+    ]
+  }
+}

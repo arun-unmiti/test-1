@@ -1,3 +1,4 @@
+# api_web/views/user_mgmt.py
 import re
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -290,7 +291,7 @@ class UserMgmtView(APIView):
                 user.deleted_on = None
                 user.deleted_by_user_id = None
                 user.status = True
-                user.is_active = True
+                # is_active removed (does not exist)
                 user.updated_on = now()
                 user.updated_by_user_id = actor_id
                 user.save()
@@ -318,7 +319,7 @@ class UserMgmtView(APIView):
             user.deleted_on = now()
             user.deleted_by_user_id = actor_id
             user.status = False
-            user.is_active = False
+            # is_active removed (does not exist)
             user.updated_on = now()
             user.updated_by_user_id = actor_id
             user.save()

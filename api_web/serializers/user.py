@@ -1,6 +1,7 @@
+# api_web/serializers/user.py
 from rest_framework import serializers
 from api_auth.models import TblUser, TblUserLocation
-from django.utils.timezone import datetime
+from datetime import datetime   # Fixed correct import
 
 
 class UserLocationSerializer(serializers.ModelSerializer):
@@ -25,7 +26,7 @@ class UserListSerializer(serializers.ModelSerializer):
         r['full_name'] = instance.full_name
         r['email'] = instance.email
         r['phone'] = instance.phone
-        r['username'] = instance.username
+        # username removed (does not exist in new tbl_user)
         r['role_id'] = instance.role_id
         r['role_name'] = instance.role.name if instance.role else None
         r['role_code'] = instance.role.code if instance.role else None
@@ -46,7 +47,7 @@ class UserListSerializer(serializers.ModelSerializer):
         r['previous_login'] = datetime.strftime(instance.previous_login, "%Y-%m-%d %H:%M:%S") if instance.previous_login else None
         r['last_login'] = datetime.strftime(instance.last_login, "%Y-%m-%d %H:%M:%S") if instance.last_login else None
         r['created_on'] = datetime.strftime(instance.created_on, "%Y-%m-%d %H:%M:%S") if instance.created_on else None
-        r['is_active'] = instance.is_active
+        # is_active removed (does not exist in new tbl_user)
         r['status'] = 'Active' if instance.status else 'Inactive'
         return r
 
@@ -64,7 +65,7 @@ class UserDetailSerializer(serializers.ModelSerializer):
         r['full_name'] = instance.full_name
         r['email'] = instance.email
         r['phone'] = instance.phone
-        r['username'] = instance.username
+        # username removed (does not exist in new tbl_user)
         r['role_id'] = instance.role_id
         r['role_name'] = instance.role.name if instance.role else None
         r['role_code'] = instance.role.code if instance.role else None
@@ -76,6 +77,6 @@ class UserDetailSerializer(serializers.ModelSerializer):
         r['previous_login'] = datetime.strftime(instance.previous_login, "%Y-%m-%d %H:%M:%S") if instance.previous_login else None
         r['last_login'] = datetime.strftime(instance.last_login, "%Y-%m-%d %H:%M:%S") if instance.last_login else None
         r['created_on'] = datetime.strftime(instance.created_on, "%Y-%m-%d %H:%M:%S") if instance.created_on else None
-        r['is_active'] = instance.is_active
+        # is_active removed (does not exist in new tbl_user)
         r['status'] = 'Active' if instance.status else 'Inactive'
         return r

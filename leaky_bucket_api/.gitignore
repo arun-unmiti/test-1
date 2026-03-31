@@ -1,0 +1,8 @@
+/_prompts
+/venv
+**/__pycache__
+.pyc
+.env
+models_derived.py
+notes.txt
+/media

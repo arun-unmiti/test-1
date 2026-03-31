@@ -1,0 +1,16 @@
+Django
+django-cors-headers
+django-mysql
+djangorestframework
+djangorestframework-jwt
+gunicorn
+ipython
+mysqlclient
+PyJWT
+pymysql
+python-dotenv
+pytz
+sqlparse
+typing_extensions
+tzdata
+uuid
